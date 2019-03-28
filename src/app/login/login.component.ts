@@ -29,6 +29,6 @@ export class LoginComponent   {
   public onSubmit() {
     console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
-    this.router.navigate(['sessionconsult']);
+    
   }
 }

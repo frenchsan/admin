@@ -1,3 +1,22 @@
-<p>
-  reservations works!
-</p>
+<div *ngFor="let reservation of reservationList">
+  <mat-card>
+    <mat-card-content class="global_resa">
+      <div>
+        {{reservation.hour_start | date: 'H'}}H
+      </div>
+      <div class="detail">
+        <div>
+          nbr joueurs
+        </div>
+        {{reservation.number_of_players}}
+      </div>
+      <div>
+        {{reservation.is_validated}}
+      </div>
+      <div>
+        {{reservation.subscribers[0].email}}
+      </div>
+
+    </mat-card-content>
+  </mat-card>  
+</div>

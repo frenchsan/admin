@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
@@ -8,7 +9,7 @@ import { environment } from '../environments/environment';
 export class AuthenticationService {
 
   private baseUrl = environment.baseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   public login(username: string, password: string) {
     const body = {
@@ -21,6 +22,7 @@ export class AuthenticationService {
         if (data.body['token']) {
           localStorage.setItem('token', data.body['token']);
           console.log(data.body['token']);
+          this.router.navigate(['sessionconsult']);
         }
       }
     );

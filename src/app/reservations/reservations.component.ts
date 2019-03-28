@@ -11,12 +11,14 @@ import { Observable } from 'rxjs';
 export class ReservationsComponent implements OnInit {
   reservationList: Reservation[];
 
-  _reservationListObservable: Observable<ReservationObject>;
-
   constructor(private reservationService: ReservationService) { }
 
   ngOnInit() {
-    this._reservationListObservable = this.reservationService.getListReservation();
+    this.reservationService.getListReservation().subscribe(
+      (data: ReservationObject ) => {
+        this.reservationList = data.message;
+      }
+    )
   }
 
 }
