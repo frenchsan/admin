@@ -13,8 +13,8 @@ export class LoginComponent   {
 
 
   public loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('noreply1@bureau401.fr'),
+    password: new FormControl('test'),
   });
 
 
