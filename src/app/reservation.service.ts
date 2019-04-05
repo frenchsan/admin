@@ -37,8 +37,8 @@ export class ReservationService {
   availabilityCreate() {
     const body = {
       'room_id': 1,
-      'startDateTime': '2019-04-22 08:00:00',
-      'endDateTime': '2019-04-22 09:30:00',
+      'startDateTime': '2019-04-23 08:00:00',
+      'endDateTime': '2019-04-23 22:00:00',
       'gameTotalDuration': 60
        };
 
@@ -51,10 +51,10 @@ export class ReservationService {
 
   sessionCreate() {
     const body = {
-      'idAvailability' : 83,
-      'startDateTime': '2019-04-22 10:00:00',
+      'idAvailability' : 84,
+      'startDateTime': '2019-04-23 12:00:00',
       'numberOfPlayers': 6,
-      'level': 2,
+      'level': 1,
       'subscribers': [{
         'firstname': 'daniel',
         'lastname': 'coucou',

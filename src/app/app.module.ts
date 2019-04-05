@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RoomListComponent } from './room-list/room-list.component';
 import {CustomMaterialModule} from './custom-material/custom-material.module';
+import { ReservationCreationComponent } from './reservation-creation/reservation-creation.component';
+import { AvailabilityCreateComponent } from './availability-create/availability-create.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -26,6 +28,8 @@ export function tokenGetter() {
     ReservationDetailsComponent,
     LoginComponent,
     RoomListComponent,
+    ReservationCreationComponent,
+    AvailabilityCreateComponent,
   ],
   imports: [
     BrowserModule,

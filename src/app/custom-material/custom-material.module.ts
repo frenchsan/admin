@@ -9,6 +9,7 @@ import { MatGridListModule,
   MatSidenavModule,
   MatListModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -22,6 +23,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
+    MatExpansionModule
+
   ],
   exports: [
     MatGridListModule,
@@ -33,6 +36,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
+    MatExpansionModule
   ],
   declarations: []
 })

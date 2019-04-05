@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Reservation } from '../models/models';
 
 @Component({
   selector: 'app-reservation-details',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationDetailsComponent implements OnInit {
 
+  isCardOpen = false;
+  @Input() reservation: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  openCard() {
+    this.isCardOpen = !this.isCardOpen;
   }
 
 }

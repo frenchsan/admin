@@ -15,6 +15,7 @@
       invoices: Invoice[];
       current_staff_hosts: boolean;
       staff: any[];
+      playdate: string;
   }
 
   export interface Room {

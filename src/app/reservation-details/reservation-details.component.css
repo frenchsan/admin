@@ -1,0 +1,49 @@
+
+
+.global_resa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.ladate {
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.validated {
+color:green;
+}
+.novalidated {
+color:red;
+}
+
+.green{
+color: green;
+}
+.orange{
+color: orange;
+}
+.red{
+color: red;
+}
+
+.reservationCard {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+
+}
