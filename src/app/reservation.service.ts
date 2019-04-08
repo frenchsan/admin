@@ -70,4 +70,54 @@ export class ReservationService {
       }
     );
   }
+
+  sessionConsult(id: number) {
+    const body = {
+      'session_id': id
+      };
+
+    this.http.post(this.baseUrl + '/api/session/consult', body).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
+
+  }
+
+  sessionDelete(id: number) {
+    const body = {
+      'session_id': id
+      };
+
+    this.http.post(this.baseUrl + '/api/session/cancel', body).subscribe(
+      (data) => {
+        console.log(data);
+      }
+    );
+
+  }
+
+  sessionUpdate(id: number) {
+    const body = {
+      'idSession' : id,
+      'startDateTime': '2019-04-23 12:00:00',
+      'numberOfPlayers': 5,
+      'level': 1,
+      'subscribers': [{
+        'firstname': 'daniel',
+        'lastname': 'coucou',
+        'creator': true,
+        'email': 'daniel@bureau401.fr'
+      }],
+      'discounts': []
+       };
+
+    this.http.post(this.baseUrl + '/api/session/update', body).subscribe(
+      (data) => {
+        console.log(data);
+
+
+      }
+    );
+  }
 }

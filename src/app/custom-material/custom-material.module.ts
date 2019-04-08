@@ -10,6 +10,7 @@ import { MatGridListModule,
   MatListModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDividerModule
 
   ],
   exports: [
@@ -36,7 +38,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDividerModule
   ],
   declarations: []
 })

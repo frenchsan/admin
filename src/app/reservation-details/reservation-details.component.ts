@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Reservation } from '../models/models';
+import { ReservationService } from '../reservation.service';
 
 @Component({
   selector: 'app-reservation-details',
@@ -10,13 +11,28 @@ export class ReservationDetailsComponent implements OnInit {
 
   isCardOpen = false;
   @Input() reservation: any;
-  constructor() { }
+  constructor( private reservationService: ReservationService) { }
 
   ngOnInit() {
   }
 
   openCard() {
     this.isCardOpen = !this.isCardOpen;
+  }
+
+  updateSession(id: number) {
+    console.log('updateSession', id);
+    this.reservationService.sessionUpdate(id);
+  }
+
+  consultSession(id: number) {
+    console.log('consultSession', id);
+    this.reservationService.sessionConsult(id);
+  }
+
+  deleteSession(id: number) {
+    console.log('deleteSession', id);
+    this.reservationService.sessionDelete(id);
   }
 
 }

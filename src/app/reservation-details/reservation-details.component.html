@@ -45,23 +45,24 @@
             {{reservation.subscribers[0].email}}
           </div>
       </div>
-
     </mat-card-content>
+
+    <hr *ngIf="isCardOpen">
     <mat-card-content *ngIf="isCardOpen" class="global_resa">
-        <div>
-            <div>Prix total</div>
+        <div class="detail">
+            <div>Total</div>
             <div>
                 {{reservation.total_price}} €
             </div>
           </div>
           <div class="detail">
             <div>
-                <div>Date de création</div>
+                <div>Création</div>
             </div>
             {{reservation.creation_time | date}}
           </div>
 
-          <div>
+          <div class="detail">
               <div>Prise en compte staff</div>
             <div *ngIf="reservation.current_staff_hosts; else novalidated">
                 <mat-icon class="validated" aria-hidden="false" aria-label="Example home icon">thumb_up_alt</mat-icon>
@@ -70,6 +71,9 @@
                   <mat-icon  class="novalidated" aria-hidden="false" aria-label="Example home icon">thumb_down_alt</mat-icon>
               </ng-template>
           </div>
+
+          <!-- <button (click) = "updateSession(reservation.id)" mat-raised-button color="primary">Update Session</button>
+          <button (click) = "consultSession(reservation.id)" mat-raised-button color="primary">Consult Session</button> -->
 
     </mat-card-content>
   </mat-card>
