@@ -12,14 +12,16 @@ import * as moment from 'moment';
 })
 export class ReservationsComponent implements OnInit {
 
+reservationList: Reservation[];
+panelOpenState = false;
+test;
+liste = [];
+today = new Date();
+
+
 
   constructor(private reservationService: ReservationService) { }
-  reservationList: Reservation[];
-  panelOpenState = false;
- test;
- liste = [];
 
-  Array;
   ngOnInit() {
     this.reservationService.getListReservation().subscribe(
       (data: ReservationObject ) => {

@@ -13,6 +13,7 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   getListReservation() {
+    const startDate = Date();
     const body = {
       'startDateTime': '2019-03-21 16:34:55',
       'endDateTime': '2020-03-20 16:34:55',
@@ -37,8 +38,8 @@ export class ReservationService {
   availabilityCreate() {
     const body = {
       'room_id': 1,
-      'startDateTime': '2019-04-23 08:00:00',
-      'endDateTime': '2019-04-23 22:00:00',
+      'startDateTime': '2019-04-12 08:00:00',
+      'endDateTime': '2019-04-12 22:00:00',
       'gameTotalDuration': 60
        };
 
@@ -52,7 +53,7 @@ export class ReservationService {
   sessionCreate() {
     const body = {
       'idAvailability' : 84,
-      'startDateTime': '2019-04-23 12:00:00',
+      'startDateTime': '2019-04-12 12:00:00',
       'numberOfPlayers': 6,
       'level': 1,
       'subscribers': [{

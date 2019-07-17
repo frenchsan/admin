@@ -14,9 +14,7 @@
       subscribers: Subscriber[];
       invoices: Invoice[];
       current_staff_hosts: boolean;
-      staff: any[];
-      playdate: string;
-  }
+      staff: any[];  }
 
   export interface Room {
       id: number;
