@@ -13,8 +13,8 @@ export class LoginComponent   {
 
 
   public loginForm = new FormGroup({
-    username: new FormControl('noreply1@bureau401.fr'),
-    password: new FormControl('test'),
+    username: new FormControl(),
+    password: new FormControl(),
   });
 
 
@@ -29,6 +29,6 @@ export class LoginComponent   {
   public onSubmit() {
     console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value.username, this.loginForm.value.password);
-    
+
   }
 }

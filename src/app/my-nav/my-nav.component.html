@@ -8,8 +8,9 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-        <a [routerLink]="['/sessioncreation']">link creation session</a>
-      <a mat-list-item href="#">Link 2</a>
+        <a  mat-list-item [routerLink]="['/sessioncreation']">Creation de session</a>
+        <a  mat-list-item [routerLink]="['/availabilityList']">Liste des sessions ouvrables (availability)</a>
+        <a  mat-list-item [routerLink]="['/availabilitycreation']">Creation de session (availability)</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>

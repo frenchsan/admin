@@ -13,8 +13,8 @@ export class AvailabilityCreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  availabilityCreate() {
-    this.reservationService.availabilityCreate();
+  availabilityCreate(availability) {
+    this.reservationService.availabilityCreate(availability);
   }
 
 }

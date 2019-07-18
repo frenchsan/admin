@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ReservationObject, Reservation } from './models/models';
+import { now } from 'moment';
+import { UtilsService } from './common/utils.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +12,10 @@ export class ReservationService {
 
   private baseUrl = environment.baseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private utilsService: UtilsService ) { }
 
   getListReservation() {
-    const startDate = Date();
+    console.log('today', this.utilsService.today);
     const body = {
       'startDateTime': '2019-03-21 16:34:55',
       'endDateTime': '2020-03-20 16:34:55',
@@ -35,7 +37,7 @@ export class ReservationService {
     );
   }
 
-  availabilityCreate() {
+  availabilityCreate(availability) {
     const body = {
       'room_id': 1,
       'startDateTime': '2019-04-12 08:00:00',

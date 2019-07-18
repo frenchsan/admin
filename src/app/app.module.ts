@@ -10,11 +10,13 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RoomListComponent } from './room-list/room-list.component';
 import {CustomMaterialModule} from './custom-material/custom-material.module';
 import { ReservationCreationComponent } from './reservation-creation/reservation-creation.component';
 import { AvailabilityCreateComponent } from './availability-create/availability-create.component';
+import { AvailabilityListComponent } from './availability-list/availability-list.component';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -30,6 +32,7 @@ export function tokenGetter() {
     RoomListComponent,
     ReservationCreationComponent,
     AvailabilityCreateComponent,
+    AvailabilityListComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        whitelistedDomains: ['localhost:4200', 'preprod.api.bureau401.fr'],
+        whitelistedDomains: ['localhost:4200', 'preprod.api.bureau401.fr', 'api.bureau401.fr'],
       }
     }),
     AppRoutingModule,
@@ -45,9 +48,12 @@ export function tokenGetter() {
     LayoutModule,
     CustomMaterialModule,
     ReactiveFormsModule,
+    FormsModule,
+    DlDateTimeDateModule,  // <--- Determines the data type of the model
+    DlDateTimePickerModule,
 
   ],
-  providers: [],
+  providers: [FormsModule],
   bootstrap: [MyNavComponent]
 })
 export class AppModule { }

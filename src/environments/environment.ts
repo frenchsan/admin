@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://preprod.api.bureau401.fr'
+   baseUrl: 'https://preprod.api.bureau401.fr'
+  // baseUrl: 'https://api.bureau401.fr'
 };
 
 /*
