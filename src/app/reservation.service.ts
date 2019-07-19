@@ -15,9 +15,9 @@ export class ReservationService {
   constructor(private http: HttpClient, private utilsService: UtilsService ) { }
 
   getListReservation() {
-    console.log('today', this.utilsService.today);
     const body = {
-      'startDateTime': '2019-03-21 16:34:55',
+      'startDateTime': '2019-07-19 08:00:00',
+      // 'startDateTime': this.utilsService.dateAndHour,
       'endDateTime': '2020-03-20 16:34:55',
       'unvalidated': true};
 
@@ -26,7 +26,7 @@ export class ReservationService {
 
   getAvailabilityList() {
     const body = {
-      'startDateTime': '2019-03-21 16:34:55',
+      'startDateTime': this.utilsService.dateAndHour,
       'endDateTime': '2020-03-20 16:34:55',
        };
 
@@ -37,12 +37,12 @@ export class ReservationService {
     );
   }
 
-  availabilityCreate(availability) {
+  availabilityCreate(startDate, endDate, gameTotalDuration, room_id) {
     const body = {
-      'room_id': 1,
-      'startDateTime': '2019-04-12 08:00:00',
-      'endDateTime': '2019-04-12 22:00:00',
-      'gameTotalDuration': 60
+      'room_id': +room_id,
+      'startDateTime': startDate,
+      'endDateTime': endDate,
+      'gameTotalDuration': +gameTotalDuration
        };
 
     this.http.post(this.baseUrl + '/api/staff/availability/create', body).subscribe(
@@ -54,8 +54,8 @@ export class ReservationService {
 
   sessionCreate() {
     const body = {
-      'idAvailability' : 84,
-      'startDateTime': '2019-04-12 12:00:00',
+      'idAvailability' : 87,
+      'startDateTime': '2019-07-20 08:00:00',
       'numberOfPlayers': 6,
       'level': 1,
       'subscribers': [{

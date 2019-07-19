@@ -11,6 +11,8 @@ import { MatGridListModule,
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -25,7 +27,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatListModule,
     MatFormFieldModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    MatSelectModule
 
   ],
   exports: [
@@ -39,7 +43,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatListModule,
     MatFormFieldModule,
     MatExpansionModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule,
+    MatSelectModule
   ],
   declarations: []
 })
