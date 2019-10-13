@@ -8,7 +8,7 @@ import { ReservationCreationComponent } from './reservation-creation/reservation
 import { AvailabilityCreateComponent} from './availability-create/availability-create.component';
 import { AvailabilityListComponent } from './availability-list/availability-list.component';
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: ReservationsComponent},
   {path: 'sessionconsult', component: ReservationsComponent},
   {path: 'sessioncreation', component: ReservationCreationComponent},
   {path: 'availabilitycreation', component: AvailabilityCreateComponent},

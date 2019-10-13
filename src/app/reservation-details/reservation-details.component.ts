@@ -11,16 +11,16 @@ import * as moment from 'moment';
 export class ReservationDetailsComponent implements OnInit {
 
   isCardOpen = false;
+  ecart: number;
   @Input() reservation: Reservation;
   constructor( private reservationService: ReservationService) { }
 
   ngOnInit() {
-    const dateresa = moment(this.reservation.hour_start);
+    const dateresa = moment(this.reservation.hour_start).startOf('day');
+    console.log('dateresa' + dateresa);
     const today = moment();
-    const ecart = dateresa.diff(today, 'days');
-    console.log(ecart);
-    moment('2010-01-01').isSame('2010-02-01', 'day');
-
+    this.ecart = dateresa.diff(today, 'days') ;
+    console.log(this.ecart);
   }
 
 

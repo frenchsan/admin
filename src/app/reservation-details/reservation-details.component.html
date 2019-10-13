@@ -1,6 +1,17 @@
 <mat-card (click)="openCard()" class = "reservationCard" >
+  <div>
+    {{reservation.room.name}}
+  </div>
   <div class="ladate">
-    {{reservation.hour_start | date: 'dd/LLLL/yy'}}
+    <div *ngIf="ecart == 0">
+      {{reservation.hour_start | date: 'dd LLLL yy'}} ( aujourd'hui) )
+    </div>
+    <div *ngIf="ecart == 1">
+      {{reservation.hour_start | date: 'dd LLLL yy'}} ( demain )
+    </div>
+    <div *ngIf="ecart > 1">
+      {{reservation.hour_start | date: 'dd LLLL yy'}} ( dans {{ecart}} jour(s) )
+    </div>
   </div>
     <mat-card-content class="global_resa">
       <div>

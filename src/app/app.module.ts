@@ -17,10 +17,16 @@ import { ReservationCreationComponent } from './reservation-creation/reservation
 import { AvailabilityCreateComponent } from './availability-create/availability-create.component';
 import { AvailabilityListComponent } from './availability-list/availability-list.component';
 import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { LOCALE_ID } from '@angular/core';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -53,7 +59,8 @@ export function tokenGetter() {
     DlDateTimePickerModule,
 
   ],
-  providers: [FormsModule],
+  providers: [FormsModule,
+    { provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [MyNavComponent]
 })
 export class AppModule { }

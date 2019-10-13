@@ -12,16 +12,18 @@ export class ReservationService {
 
   private baseUrl = environment.baseUrl;
 
+
   constructor(private http: HttpClient, private utilsService: UtilsService ) { }
 
   getListReservation() {
     const body = {
-      'startDateTime': '2019-07-19 08:00:00',
-      // 'startDateTime': this.utilsService.dateAndHour,
-      'endDateTime': '2020-03-20 16:34:55',
+   //   'startDateTime': '2019-07-19 08:00:00',
+      'startDateTime': this.utilsService.dateAndHour,
+      'endDateTime': '2030-03-20 16:34:55',
       'unvalidated': true};
 
     return this.http.post<ReservationObject>(this.baseUrl + '/api/staff/sessions', body);
+    //return this.http.get<ReservationObject>('assets/resa.json');
   }
 
   getAvailabilityList() {
@@ -54,8 +56,8 @@ export class ReservationService {
 
   sessionCreate() {
     const body = {
-      'idAvailability' : 87,
-      'startDateTime': '2019-07-20 08:00:00',
+      'idAvailability' : 88,
+      'startDateTime': '2019-08-10 08:00:00',
       'numberOfPlayers': 6,
       'level': 1,
       'subscribers': [{
