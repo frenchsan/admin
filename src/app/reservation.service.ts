@@ -22,8 +22,8 @@ export class ReservationService {
       'endDateTime': '2030-03-20 16:34:55',
       'unvalidated': true};
 
-    return this.http.post<ReservationObject>(this.baseUrl + '/api/staff/sessions', body);
-    //return this.http.get<ReservationObject>('assets/resa.json');
+    //return this.http.post<ReservationObject>(this.baseUrl + '/api/staff/sessions', body);
+    return this.http.get<ReservationObject>('assets/resa.json');
   }
 
   getAvailabilityList() {
