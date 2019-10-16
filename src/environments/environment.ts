@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-   baseUrl: ''
-  // baseUrl: 'https://api.bureau401.fr'
+  baseUrl: 'https://api.bureau401.fr'
 };
 
 /*

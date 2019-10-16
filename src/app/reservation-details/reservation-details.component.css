@@ -8,6 +8,13 @@
 
 }
 
+.classique {
+  background: white;
+}
+.halloween {
+  background: rgb(245, 201, 198);
+}
+
 .global_resa {
   display: flex;
   flex-direction: row;

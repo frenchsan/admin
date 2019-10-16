@@ -1,16 +1,10 @@
-<mat-card (click)="openCard()" class = "reservationCard" >
+  <mat-card (click)="openCard()" class = "reservationCard" [ngClass]="{'classique': reservation.room.id=='1', 'halloween':reservation.room.id=='2' }" >
   <div>
     {{reservation.room.name}}
   </div>
   <div class="ladate">
-    <div *ngIf="ecart == 0">
-      {{reservation.hour_start | date: 'dd LLLL yy'}} ( aujourd'hui) )
-    </div>
-    <div *ngIf="ecart == 1">
-      {{reservation.hour_start | date: 'dd LLLL yy'}} ( demain )
-    </div>
-    <div *ngIf="ecart > 1">
-      {{reservation.hour_start | date: 'dd LLLL yy'}} ( dans {{ecart}} jour(s) )
+    <div>
+      {{reservation.hour_start | date: 'dd LLLL yy'}}  )
     </div>
   </div>
     <mat-card-content class="global_resa">
@@ -88,3 +82,4 @@
 
     </mat-card-content>
   </mat-card>
+
