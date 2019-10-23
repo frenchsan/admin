@@ -20,6 +20,8 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { LOCALE_ID } from '@angular/core';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -56,7 +58,7 @@ registerLocaleData(localeFr, 'fr');
     ReactiveFormsModule,
     FormsModule,
     DlDateTimeDateModule,  // <--- Determines the data type of the model
-    DlDateTimePickerModule,
+    DlDateTimePickerModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
   ],
   providers: [FormsModule,

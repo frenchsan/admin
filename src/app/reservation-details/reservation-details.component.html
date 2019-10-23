@@ -1,17 +1,17 @@
-  <mat-card (click)="openCard()" class = "reservationCard" [ngClass]="{'classique': reservation.room.id=='1', 'halloween':reservation.room.id=='2' }" >
+  <!-- <mat-card (click)="openCard()" class = "reservationCard" [ngClass]="{'classique': reservation.room.id=='1', 'halloween':reservation.room.id=='2' }" >
   <div>
     {{reservation.room.name}}
   </div>
   <div class="ladate">
     <div>
-      {{reservation.hour_start | date: 'dd LLLL yy'}}  )
+      {{reservation.hour_start | date: 'EEEE dd LLLL yy'}}
     </div>
   </div>
     <mat-card-content class="global_resa">
       <div>
         <mat-icon aria-hidden="false" aria-label="Example home icon">access_time</mat-icon>
         <div>
-            {{reservation.hour_start | date: 'H'}}H
+            {{reservation.hour_start | date: 'H'}}H {{reservation.hour_start | date: 'm'}
         </div>
       </div>
       <div class="detail">
@@ -77,9 +77,8 @@
               </ng-template>
           </div>
 
-          <!-- <button (click) = "updateSession(reservation.id)" mat-raised-button color="primary">Update Session</button>
-          <button (click) = "consultSession(reservation.id)" mat-raised-button color="primary">Consult Session</button> -->
+
 
     </mat-card-content>
   </mat-card>
-
+ -->

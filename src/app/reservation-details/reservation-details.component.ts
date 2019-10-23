@@ -16,7 +16,8 @@ export class ReservationDetailsComponent implements OnInit {
   constructor( private reservationService: ReservationService) { }
 
   ngOnInit() {
-    const dateresa = moment(this.reservation.hour_start).startOf('day');
+    // const dateresa = moment(this.reservation.hour_start).startOf('day');
+    const dateresa = moment(this.reservation.hour_start);
     console.log('dateresa' + dateresa);
     const today = moment();
     this.ecart = dateresa.diff(today, 'days') ;
